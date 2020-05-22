@@ -1,0 +1,151 @@
+mysql:
+  enabled: false
+  host: ''
+  port: 3306
+  username: ''
+  password: ''
+  database: ''
+
+auto-join:
+  enabled: false
+  group: 'server'
+
+autowarp:
+  # How much time (in minutes) between auto warps.
+  frequency: 20
+
+# In minutes
+intervals:
+  # How often should the leaderboard placeholders update
+  update: 1
+  # How often should player data automatically save
+  save: 2
+
+prevent:
+  drop: true
+
+elo:
+  default: 120
+  max: 12000
+  formula:
+    # 'k' value
+    constant: 32
+
+killstreak:
+  bossbar:
+    minimum: 3
+    title: '&5You must get a kill within the next %time% seconds to keep your x%killstreak% killstreak.'
+    color: PURPLE
+    style: SEGMENTED_6
+  formula:
+    # %base% - (%increment% * killstreak)
+    base: 60
+    increment: 0.5
+
+minerals:
+  enabled: true
+  whitelist:
+    - GOLD_ORE
+    - IRON_ORE
+    - COAL_ORE
+    - EMERALD_ORE
+    - DIAMOND_ORE
+    - REDSTONE_ORE
+    - NETHER_QUARTZ_ORE
+    - LAPIS_ORE
+    - ACACIA_LOG
+    - JUNGLE_LOG
+    - BIRCH_LOG
+    - SPRUCE_LOG
+    - OAK_LOG
+    - DARK_OAK_LOG
+    - DEAD_BUSH
+    - COBWEB
+    - BROWN_MUSHROOM_BLOCK
+    - RED_MUSHROOM_BLOCK
+    - MUSHROOM_STEM
+    - GOLD_BLOCK
+    - IRON_BLOCK
+    - COAL_BLOCK
+    - EMERALD_BLOCK
+    - DIAMOND_BLOCK
+    - REDSTONE_BLOCK
+    - LAPIS_BLOCK
+    - CARVED_PUMPKIN
+    #food purpose
+    - PUMPKIN
+    - BEETROOTS
+    - WHEAT
+    - KELP
+    - DRIED_KELP_BLOCK
+    - SUGAR_CANE
+    - BAMBOO
+  ## How much time (in seconds) should pass before the block regens.
+  delay: 30
+
+scoreboard:
+  enabled: false
+  title: '&6Scoreboard'
+  lines:
+    - "&a&lMAP: &n%pvpremap_current_map%"
+    - "&8Map warping Cooldown: &7%pvpremap_map_cooldown%"
+    - "&aPvpRemap scores"
+    - "&f"
+    - "&6Money&r: &e%vault_eco_balance%"
+    - "&r "
+    - "&6&lElo Ranking"
+    - "&aElo level&r: &6%pvpremap_elo_level%"
+    - "&arank&r: &6%pvpremap_elo_rank%"
+
+vote-menu:
+  name: '&7Vote Menu'
+  size: 54
+
+  fill-inventory: true
+  fill-item:
+    name: "&7 "
+    material: "BLACK_STAINED_GLASS_PANE"
+
+  map-item:
+    name: '&7%mapname%'
+    material: "MAP"
+    lore:
+      - '&6Vote: %votes%'
+
+  remove-item:
+    name: '&4Remove Vote'
+    material: 'BARRIER'
+    slot: 49
+    lore:
+      - '&7Remove your current vote'
+
+default:
+  inventory:
+    ## Example
+    ## Number:
+    ##   name: 'Item Name'
+    ##   material: ITEM_TYPE
+    ##   lore:
+    ##     - '&7As many'
+    ##     - '&7lines as you want'
+    ##   enchants:
+    ##     - 'PROTECTION_ENVIRONMENTAL:3
+    ##     - 'THORNS:2'
+    ## List of enchants can be found at https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html
+    1:
+      name: '&7Leather Helmet'
+      material: LEATHER_HELMET
+    2:
+      name: '&7Leather Chestplate'
+      material: LEATHER_CHESTPLATE
+    3:
+      name: '&7Leather Leggings'
+      material: LEATHER_LEGGINGS
+    4:
+      name: '&7Leather Boots'
+      material: LEATHER_BOOTS
+    5:
+      name: '&7Iron Sword'
+      material: IRON_SWORD
+      enchants:
+        - 'DAMAGE_ALL:3'
