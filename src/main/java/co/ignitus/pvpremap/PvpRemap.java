@@ -42,8 +42,9 @@ public final class PvpRemap extends JavaPlugin {
     public void onEnable() {
         instance = this;
         cs.sendMessage(ChatColor.GREEN + ChatColor.STRIKETHROUGH.toString() + "---------------------------");
-        cs.sendMessage(ChatColor.GREEN + "  Enabling PvpRemap");
+        cs.sendMessage(ChatColor.GREEN + " Enabling PvpRemap");
         cs.sendMessage(ChatColor.GREEN + " Developed by Ignitus Co.");
+        cs.sendMessage(ChatColor.GREEN + " Patched buy Dryter97.");
         cs.sendMessage(ChatColor.GREEN + ChatColor.STRIKETHROUGH.toString() + "---------------------------");
 
         loadFiles();
@@ -74,7 +75,6 @@ public final class PvpRemap extends JavaPlugin {
     public void onDisable() {
         cs.sendMessage(ChatColor.RED + ChatColor.STRIKETHROUGH.toString() + "---------------------------");
         cs.sendMessage(ChatColor.RED + "   Disabling PvpRemap");
-        cs.sendMessage(ChatColor.RED + "  Developed by Ignitus Co.");
         cs.sendMessage(ChatColor.RED + ChatColor.STRIKETHROUGH.toString() + "---------------------------");
         Bukkit.getOnlinePlayers().forEach(player -> {
             if (GroupUtil.getGroup(player.getUniqueId()) != null)
@@ -106,7 +106,7 @@ public final class PvpRemap extends JavaPlugin {
         cs.sendMessage(MessageUtil.format("&2[PvpRemap] Hooked into WorldEdit"));
         if (!getServer().getPluginManager().isPluginEnabled("PlaceholderAPI")) {
             cs.sendMessage(ChatColor.RED + "[PvpRemap] PlaceholderAPI not found - Disabling plugin");
-            this.getServer().getPluginManager().disablePlugin(this);
+            // this.getServer().getPluginManager().disablePlugin(this);
             return false;
         }
         new PlaceholderUtil().register();
